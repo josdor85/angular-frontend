@@ -5,16 +5,16 @@ import {Router} from "@angular/router";
   providedIn: "root"
 })
 export class AuthService {
-  public  users:any = {
-    admin : {password : "1234", roles : ['STUDENT', 'ADMIN']},
-    user1 : {password : "1234", roles : ['STUDENT']},
+  public users: any = {
+    admin: {password: "1234", roles: ['STUDENT', 'ADMIN']},
+    user1: {password: "1234", roles: ['STUDENT']},
   }
 
-  public username : any;
+  public username: any;
   public isAuthenticated: boolean = false;
-  public  roles : string[] = [];
+  public roles: string[] = [];
 
-  constructor(private router:Router) {
+  constructor(private router: Router) {
   }
 
   public login(username: string, password: string): boolean {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {AuthService} from "../services/auth.service";
 
 @Component({
@@ -7,7 +7,8 @@ import {AuthService} from "../services/auth.service";
   styleUrl: './admin-template.component.css'
 })
 export class AdminTemplateComponent {
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService) {
+  }
 
   logout() {
     this.authService.logout();

@@ -1,24 +1,18 @@
-import {
-  ActivatedRouteSnapshot,
-  Data,
-  GuardResult,
-  MaybeAsync,
-  Router,
-  RouterStateSnapshot
-} from '@angular/router';
+import {ActivatedRouteSnapshot, Data, GuardResult, MaybeAsync, Router, RouterStateSnapshot} from '@angular/router';
 import {Injectable} from "@angular/core";
 import {AuthService} from "../services/auth.service";
 
 @Injectable()
 export class AuthorizationGuard {
   constructor(private authService: AuthService,
-              private router: Router) {}
+              private router: Router) {
+  }
 
   canActivate(route: ActivatedRouteSnapshot,
               state: RouterStateSnapshot): MaybeAsync<GuardResult> {
     if (this.authService.isAuthenticated) {
       let requiredRoles: Data = route.data['roles'];
-      let userRoles : string[] = this.authService.roles;
+      let userRoles: string[] = this.authService.roles;
       for (let role of userRoles) {
         if (requiredRoles['includes'](role)) {
           return true;

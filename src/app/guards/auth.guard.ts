@@ -1,14 +1,12 @@
-import {
-  ActivatedRouteSnapshot, GuardResult, MaybeAsync,
-  Router
-} from '@angular/router';
+import {ActivatedRouteSnapshot, GuardResult, MaybeAsync, Router} from '@angular/router';
 import {Injectable} from "@angular/core";
 import {AuthService} from "../services/auth.service";
 
 @Injectable({providedIn: "root"})
 export class AuthGuard {
   constructor(private authService: AuthService,
-              private router: Router) {}
+              private router: Router) {
+  }
 
   canActivate(route: ActivatedRouteSnapshot, state: MaybeAsync<GuardResult>) {
     if (this.authService.isAuthenticated) {

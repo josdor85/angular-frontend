@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./home/home.component";
 import {LoginComponent} from "./login/login.component";
 import {ProfileComponent} from "./profile/profile.component";
@@ -15,27 +15,30 @@ import {AuthorizationGuard} from "./guards/authorization.guard";
 const routes: Routes = [
   {path: "", component: LoginComponent},
   {path: "login", component: LoginComponent},
-  {path: "admin", component: AdminTemplateComponent,
+  {
+    path: "admin", component: AdminTemplateComponent,
     canActivate: [AuthGuard],
-      children: [
-        {path: "home", component: HomeComponent},
-        {path: "profile", component: ProfileComponent},
-        {path: "students", component: StudentsComponent},
-        {path: "payments", component: PaymentsComponent},
-        {path: "dashboard", component: DashboardComponent},
-        {
-          path: "loadStudents", component: LoadStudentsComponent,
-          canActivate: [AuthorizationGuard], data: {roles: ['ADMIN']}
-        },
-        {
-          path: "loadPayments", component: LoadPaymentsComponent,
-          canActivate: [AuthorizationGuard], data: {roles: ['ADMIN']}
-        }
-      ]
+    children: [
+      {path: "home", component: HomeComponent},
+      {path: "profile", component: ProfileComponent},
+      {path: "students", component: StudentsComponent},
+      {path: "payments", component: PaymentsComponent},
+      {path: "dashboard", component: DashboardComponent},
+      {
+        path: "loadStudents", component: LoadStudentsComponent,
+        canActivate: [AuthorizationGuard], data: {roles: ['ADMIN']}
+      },
+      {
+        path: "loadPayments", component: LoadPaymentsComponent,
+        canActivate: [AuthorizationGuard], data: {roles: ['ADMIN']}
+      }
+    ]
   }
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

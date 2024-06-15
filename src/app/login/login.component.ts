@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements  OnInit {
+export class LoginComponent implements OnInit {
   public loginForm!: FormGroup;
 
   constructor(private fb: FormBuilder,
@@ -26,7 +26,7 @@ export class LoginComponent implements  OnInit {
   login(): void {
     let username = this.loginForm.value.username;
     let password = this.loginForm.value.password;
-    let auth:boolean = this.authService.login(username, password);
+    let auth: boolean = this.authService.login(username, password);
     if (auth) {
       this.router.navigate(['/admin']);
     }

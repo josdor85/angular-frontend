@@ -10,18 +10,19 @@ import {MatTableDataSource} from "@angular/material/table";
 export class PaymentsComponent implements OnInit {
 
   public payments: any;
-  public dataSource : any;
+  public dataSource: any;
   public displayedColumns: string[] = ['id', 'date', 'amount', 'paymentType', 'paymentStatus', 'firstName']
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   ngOnInit() {
     this.http.get('http://localhost:8009/payments').subscribe({
-      next : data => {
+      next: data => {
         this.payments = data;
         this.dataSource = new MatTableDataSource(this.payments);
       },
-      error : err => {
+      error: err => {
         console.log(err);
       }
     })

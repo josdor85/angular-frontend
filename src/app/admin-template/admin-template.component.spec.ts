@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AdminTemplateComponent } from './admin-template.component';
+import {AdminTemplateComponent} from './admin-template.component';
 
 describe('AdminTemplateComponent', () => {
   let component: AdminTemplateComponent;
@@ -10,8 +10,8 @@ describe('AdminTemplateComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [AdminTemplateComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(AdminTemplateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
