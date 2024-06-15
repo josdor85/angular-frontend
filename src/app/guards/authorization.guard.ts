@@ -1,6 +1,6 @@
 import {
   ActivatedRouteSnapshot,
-  CanActivateFn, Data,
+  Data,
   GuardResult,
   MaybeAsync,
   Router,
