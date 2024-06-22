@@ -1,0 +1,63 @@
+<div class="container">
+  <mat-toolbar>
+    <button mat-raised-button color="primary">New Payment</button>
+  </mat-toolbar>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Student Payments Details</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <table [dataSource]="dataSource" class="mat-elevation-z1" mat-table matSort>
+
+        <!-- id Column -->
+        <ng-container matColumnDef="id">
+          <th *matHeaderCellDef mat-header-cell mat-sort-header sortActionDescription="Sort by id"> ID</th>
+          <td *matCellDef="let element" mat-cell>{{element.id}}</td>
+        </ng-container>
+
+        <!-- date Column -->
+        <ng-container matColumnDef="date">
+          <th *matHeaderCellDef mat-header-cell mat-sort-header> Date</th>
+          <td *matCellDef="let element" mat-cell>{{element.date}}</td>
+        </ng-container>
+
+        <!-- type Column -->
+        <ng-container matColumnDef="amount">
+          <th *matHeaderCellDef mat-header-cell mat-sort-header> Amount</th>
+          <td *matCellDef="let element" mat-cell>{{element.amount}}</td>
+        </ng-container>
+
+        <!-- type Column -->
+        <ng-container matColumnDef="paymentType">
+          <th *matHeaderCellDef mat-header-cell mat-sort-header> Payment Type</th>
+          <td *matCellDef="let element" mat-cell>{{element.paymentType}}</td>
+        </ng-container>
+
+        <!-- status Column -->
+        <ng-container matColumnDef="paymentStatus">
+          <th *matHeaderCellDef mat-header-cell mat-sort-header> Payment Status</th>
+          <td *matCellDef="let element" mat-cell>{{element.paymentStatus}}</td>
+        </ng-container>
+
+        <!-- firstName Column -->
+        <ng-container matColumnDef="firstName">
+          <th *matHeaderCellDef mat-header-cell mat-sort-header> FirstName</th>
+          <td *matCellDef="let element" mat-cell>{{element.student.firstName}}</td>
+        </ng-container>
+
+        <!-- Header and Row Declarations -->
+<!--        <mat-header-row *matHeaderRowDef="['firstName', 'date', 'amount', 'paymentStatus', 'paymentType']"></mat-header-row>-->
+<!--        <mat-row *matRowDef="let row; columns: ['firstName', 'date', 'amount', 'paymentStatus', 'paymentType']"></mat-row>-->
+        <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+        <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5,10,20,30,100]"
+                     aria-label="Select page of periodic elements"
+                     showFirstLastButtons>
+
+      </mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</div>
