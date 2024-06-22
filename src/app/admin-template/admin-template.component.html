@@ -11,7 +11,7 @@
   </button>
   <mat-menu #importMenu>
     <button mat-menu-item routerLink="/admin/loadStudents">Load students</button>
-    <button mat-menu-item routerLink="/admin/loadPayments">Load payments</button>
+    <button mat-menu-item routerLink="/admin/loadPayments">Load studentPayments</button>
   </mat-menu>
   <button *ngIf="authService.isAuthenticated" mat-button>{{ authService.username }}</button>
   <button (click)="logout()" color="warn" mat-raised-button routerLink="/login">Logout</button>
@@ -32,7 +32,7 @@
         </button>
       </mat-list-item>
       <mat-list-item>
-        <button mat-button routerLink="/admin/payments">
+        <button mat-button routerLink="/admin/studentPayments">
           <mat-icon>dashboard</mat-icon>
           Payments
         </button>

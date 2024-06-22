@@ -4,6 +4,57 @@
       <mat-card-title>Load students</mat-card-title>
     </mat-card-header>
     <mat-divider></mat-divider>
-    <mat-card-content>Load students</mat-card-content>
+    <mat-card-content>
+      <mat-table [dataSource]="dataSource" class="mat-elevation-z1" matSort>
+        <!-- Id definition -->
+        <ng-container matColumnDef="username">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+        </ng-container>
+
+        <!-- code Definition -->
+        <ng-container matColumnDef="code">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Code </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.code}} </mat-cell>
+        </ng-container>
+
+        <!-- firstName Definition -->
+
+        <ng-container matColumnDef="firstName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> FirstName </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.firstName}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="lastName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> LastName </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.lastName}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="photo">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Photo </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.photo}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="programId">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> ProgramId </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.programId}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="details">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Details </mat-header-cell>
+          <mat-cell *matCellDef="let row"><button mat-button (click)="studentPayments(row)">Payments</button></mat-cell>
+        </ng-container>
+
+        <!-- Header and Row Declarations -->
+        <mat-header-row *matHeaderRowDef="['firstName', 'lastName', 'code', 'programId', 'details']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['firstName', 'lastName', 'code', 'programId','details']"></mat-row>
+      </mat-table>
+      <mat-paginator [pageSizeOptions]="[5,10,20,30,100]"
+                     aria-label="Select page of periodic elements"
+                     showFirstLastButtons>
+
+      </mat-paginator>
+    </mat-card-content>
+
   </mat-card>
 </div>

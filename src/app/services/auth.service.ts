@@ -1,9 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Router} from "@angular/router";
 
-@Injectable({
-  providedIn: "root"
-})
+@Injectable({providedIn: "root"})
 export class AuthService {
   public users: any = {
     admin: {password: "1234", roles: ['STUDENT', 'ADMIN']},
