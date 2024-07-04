@@ -17,7 +17,7 @@ export interface Payment {
 }
 
 export enum PaymentType {
-  CASH , CHECK ,TRANSFERT ,DEPOSIT
+  CASH , CHECK ,TRANSFER ,DEPOSIT
 }
 
 export enum PaymentStatus {

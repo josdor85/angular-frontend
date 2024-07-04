@@ -18,5 +18,9 @@ export class StudentService {
   public getStudentPayments(code: string): Observable<Array<Payment>> {
     return this.httpClient.get<Array<Payment>>(`${environment.apiURL}/students/${code}/payments`);
   }
+
+  public savePayment(formData: FormData): Observable<Payment> {
+    return this.httpClient.post<Payment>(`${environment.apiURL}/payments/base`, formData);
+  }
 }
 

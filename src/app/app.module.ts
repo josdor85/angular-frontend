@@ -28,10 +28,22 @@ import {AuthGuard} from "./guards/auth.guard";
 import {AuthorizationGuard} from "./guards/authorization.guard";
 import {MatTableModule} from "@angular/material/table";
 import {provideHttpClient} from "@angular/common/http";
-import {MatPaginator} from "@angular/material/paginator";
+import {MatPaginator, MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import { NewPaymentComponent } from './new-payment/new-payment.component';
+import {
+  MatDatepicker,
+  MatDatepickerInput,
+  MatDatepickerModule,
+  MatDatepickerToggle
+} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatSelect, MatSelectModule} from "@angular/material/select";
+import {PdfViewerModule} from "ng2-pdf-viewer";
+import { ExamplePdfViewerComponent } from './example-pdf-viewer/example-pdf-viewer.component';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -46,7 +58,8 @@ import { NewPaymentComponent } from './new-payment/new-payment.component';
     DashboardComponent,
     LoginComponent,
     StudentDetailsComponent,
-    NewPaymentComponent
+    NewPaymentComponent,
+    ExamplePdfViewerComponent
   ],
   imports: [
     BrowserModule,
@@ -63,8 +76,13 @@ import { NewPaymentComponent } from './new-payment/new-payment.component';
     ReactiveFormsModule,
     RouterModule,
     MatTableModule,
-    MatPaginator,
-    MatSortModule
+    MatPaginatorModule,
+    MatSortModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    NgxExtendedPdfViewerModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     provideClientHydration(),

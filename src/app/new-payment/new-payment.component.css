@@ -1,0 +1,23 @@
+mat-form-field {
+  display: block;
+}
+
+.payment-form {
+  width: 500px;
+}
+
+.ngx-extended-pdf-viewer {
+  height: 100vh;
+  width: 80vw;
+  display: inline-block;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.btn-outline-danger:hover {
+  background-color: bisque;
+}
+
+.container-inblock {
+  display: inline-block;
+}

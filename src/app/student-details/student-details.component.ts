@@ -22,7 +22,7 @@ export class StudentDetailsComponent implements OnInit {
               private router: Router) {
   }
   ngOnInit(): void {
-      this.studentCode = this.activatedRoute.snapshot.params['code']
+      this.studentCode = this.activatedRoute.snapshot.params['studentCode']
       this.studentService.getStudentPayments(this.studentCode).subscribe({
         next: data => {
           this.payments = data;
@@ -37,6 +37,6 @@ export class StudentDetailsComponent implements OnInit {
     }
 
     newPayment() {
-    this.router.navigateByUrl(`/admin/new-payment/${this.studentCode}`)
+      this.router.navigateByUrl(`/admin/new-payment/${this.studentCode}`)
     }
-}
+ }
