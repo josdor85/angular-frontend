@@ -69,6 +69,7 @@ ngOnInit(): void {
           console.log(err);
         }
     });
+
   }
 
   protected readonly afterRender = afterRender;
