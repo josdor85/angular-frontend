@@ -93,5 +93,6 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }
